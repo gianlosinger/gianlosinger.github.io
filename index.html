@@ -7,67 +7,147 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="utf-8">
 	    <link rel="stylesheet" href="https://use.typekit.net/ujp4byk.css">
+
+        <link rel="preload" as="image" href="fornow.jpg">
+        <link rel="preload" as="image" href="polymerization.jpg">
+        <link rel="preload" as="image" href="particles.jpg">
+        <link rel="preload" as="image" href="some_things.jpg">        
         
         <!-- For old IEs -->
-                <link rel="shortcut icon" href="favicon.ico" />
-                
-                <!-- For new browsers - multisize ico  -->
-                <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="favicon.ico">
-                
-                <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-                <link rel="apple-touch-icon" sizes="152x152" href="favicon-152-precomposed.png">
-                
-                <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-                <link rel="apple-touch-icon" sizes="144x144" href="favicon-144-precomposed.png">
-                
-                <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-                <link rel="apple-touch-icon" sizes="120x120" href="favicon-120-precomposed.png">
-                
-                <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-                <link rel="apple-touch-icon" sizes="114x114" href="favicon-114-precomposed.png">
-                
-                <!-- For iPhone 6+ -->
-                <link rel="apple-touch-icon" sizes="180x180" href="favicon-180-precomposed.png">
-                
-                <!-- For first- and second-generation iPad: -->
-                <link rel="apple-touch-icon" sizes="72x72" href="favicon-72-precomposed.png">
-                
-                <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-                <link rel="apple-touch-icon" sizes="57x57" href="favicon-57.png">
-                
-                <!-- For Old Chrome -->
-                <link rel="icon" sizes="32x32" href="favicon-32.png" >
-                
-                <!-- For IE10 Metro -->
-                <meta name="msapplication-TileColor" content="#FFFFFF">
-                <meta name="msapplication-TileImage" content="favicon-144.png">
-                <meta name="theme-color" content="#ffffff">
-                
-                <!-- Chrome for Android -->
-                <link rel="manifest" href="manifest.json">
-                <link rel="icon" sizes="192x192" href="favicon-192.png">
+        <link rel="shortcut icon" href="favicon.ico" />
+        
+        <!-- For new browsers - multisize ico  -->
+        <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="favicon.ico">
+        
+        <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon" sizes="152x152" href="favicon-152-precomposed.png">
+        
+        <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon" sizes="144x144" href="favicon-144-precomposed.png">
+        
+        <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+        <link rel="apple-touch-icon" sizes="120x120" href="favicon-120-precomposed.png">
+        
+        <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+        <link rel="apple-touch-icon" sizes="114x114" href="favicon-114-precomposed.png">
+        
+        <!-- For iPhone 6+ -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon-180-precomposed.png">
+        
+        <!-- For first- and second-generation iPad: -->
+        <link rel="apple-touch-icon" sizes="72x72" href="favicon-72-precomposed.png">
+        
+        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+        <link rel="apple-touch-icon" sizes="57x57" href="favicon-57.png">
+        
+        <!-- For Old Chrome -->
+        <link rel="icon" sizes="32x32" href="favicon-32.png" >
+        
+        <!-- For IE10 Metro -->
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="favicon-144.png">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- Chrome for Android -->
+        <link rel="manifest" href="manifest.json">
+        <link rel="icon" sizes="192x192" href="favicon-192.png">
 
         <style type="text/css">
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
 			header {
 				font-family: Helvetica, Arial, sans-serif;
 				line-height: 1.7em;
-				margin: 20px auto auto 20px;
+				padding: 20px;
+                margin: 0;
+                font-family: "adobe-garamond-pro";
+                font-size: 12pt;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                height: 100vh;
+                box-sizing: border-box;
 			} 
 			
 			header a {
 			    color: #ca99b3;
 			    text-decoration: none;
+                margin-left: 25px;
 			}
+
+            header span.emoji {
+                font-size: 11pt;
+            }
+
+            header div.img {
+                box-sizing: border-box;
+                height: 97%;
+                padding-top: 20px;
+            }
+
+            header img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+                box-sizing: border-box;
+                cursor: pointer;
+            }
+
+            @media screen and (max-width: 400px) {
+                header {
+                    padding: 10px;
+                }
+                header a {
+                    margin-left: 10px;
+                }
+
+                header div.img {
+                    margin-top: 10px;
+                }
+            }
         </style>
     </head>
-    <body>      
+    <body onload="changeImg()">      
         <header>
+
+            <div>
 		
-            Gian Losinger 🌞<br>
-            
-            <a href="portfolio.pdf" target="_blank">download portfolio</a><br>
-            
-            <a href="mailto:gianlosinger@gmail.com">email</a>
+                Gian Losinger <span class="emoji">🌞</span>
+                
+                <a href="portfolio.pdf" target="_blank">download portfolio</a>
+                
+                <a href="mailto:gianlosinger@gmail.com">email</a>
+
+            </div>
+
+            <div class="img" onclick="changeImg2()">
+                <img id="slideshow" />
+            </div>
         </header>
+
+        <script>
+
+            var imgs = ["fornow.jpg", "polymerization.jpg", "particles.jpg", "some_things.jpg"]
+            var c = 4;
+            var i = document.getElementById("slideshow");
+
+            var cc = 0;
+
+            function changeImg() {
+                var ccc = Math.floor(Math.random() * c)
+                i.src = imgs[ccc];
+                cc = ccc;
+            }
+
+            function changeImg2() {
+                cc += 1;
+                cc = cc % c;
+                console.log(cc);
+                i.src = imgs[cc];
+            }
+        </script>
     </body>
 </html>
